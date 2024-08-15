@@ -1,0 +1,287 @@
+---
+title: "Challenges in Transitioning the UK to ‘Net-Zero’ – Some Observations from Housing and Transport"
+author: "Professor Adam Dennett - @adam_dennett"
+institute: Bartlett Centre for Advanced Spatial Analysis, University College London
+date: today
+format: 
+  revealjs:
+    theme: solarized
+    chalkboard: true
+    smaller: true
+    logo: images/University_College_London_logo.svg
+    transition: slide
+    transition-speed: fast
+    width: 1600
+    height: 900
+    footer: | 
+      <https://github.com/adamdennett/aalto_presentation_2024> 
+date-format: long
+editor: visual
+slide-number: true
+---
+
+## About Me
+
+-   Professor of Urban Analytics in the [Bartlett Centre for Advanced Spatial Analysis (CASA)](https://www.ucl.ac.uk/bartlett/casa/), University College London
+-   Just stood down after 5-years of being Head of Department for CASA
+    -   Arrived as post-doc in 2010
+    -   Grown to 18 full-time academics (3 in 2010!)
+    -   150 Masters Students across 2 MSc Programmes
+    -   20-odd PhD students
+-   Lifetime geographer - although didn't ever really have any plans to be, it just sort of happened!
+
+## What am I going to talk about today?
+
+-   A little bit of background on the important (and often overlooked) part that residential buildings play in our journey towards a carbon net-zero country.
+
+-   The leaky homes problem we have in the UK
+
+-   How we can measure leaky homes - Energy Performance Certificates
+
+-   What needs to be done to fix leaky homes and the problems ahead
+
+-   Overview of findings from recent Frontiers in Sustainability paper which looks at national variations in energy efficiency by property, neighbourhood and local authority type.
+
+-   Background on the transport sector, inequalities and the role of models in transport planning and net-zero ambitions.
+
+-   Introduction to activity-based models and how they might offer new perspectives which might assist the transition to net-zero
+
+-   Some ongoing research in the preliminary stages which is going to leverage activity-based models
+
+-   Observations and conclusions
+
+## UK CO^2^ Emissions
+
+::: columns
+::: {.column width="50%"}
+-   The UK Government has legally binding targets under the Climate Change Act 2008 to reach 'net zero' carbon emissions by 2050
+
+-   Carbon emissions are produced through demand for energy
+
+    -   **directly** through burning gas, wood, coal, peat, oil for heat/cooking etc. in buildings and through petrol and diesel combustion in vehicles, kerosene combustion in flights as well as other uses in agriculture and industry
+    -   **indirectly** through burning these things to produce electricity
+
+-   **Residential buildings** currently account for about **13.7%** of the UK's total greenhouse gas emissions - heating, cooling + running applicances.
+
+-   **Domestic Transport** currently accounts for almost **28%** of total greenhouse gas emissions
+
+-   While total Greenhouse Gas emissions have reduced since 1990, housing and transport are now responsible for a greater proportion of this total than ever before (up from 25% to almost 42%) - and still produce around **169 million tons of CO^2^** **per year**
+:::
+
+::: {.column width="50%"}
+```{r}
+library(tidyverse)
+library(readxl)
+library(ggplot2)
+
+#download UK Greenhouse Gas Data from here: https://www.gov.uk/government/statistics/final-uk-greenhouse-gas-emissions-national-statistics-1990-to-2022
+
+#data below taken from here: https://assets.publishing.service.gov.uk/media/65c0d17663a23d0013c821ea/final-greenhouse-gas-emissions-tables-2022.xlsx
+
+GreenhouseGasProp <- read_excel("data/UK_CO2.xlsx", sheet=3)
+GreenhouseGasTotal <- read_excel("data/UK_CO2.xlsx", sheet=4)
+
+GreenhouseGasProp_Long <- pivot_longer(GreenhouseGasProp,
+                                       cols = 2:34, 
+                                       names_to = "year",
+                                       values_to = "percent")
+
+#GreenhouseGasProp_Long$year <- as.numeric(GreenhouseGasProp_Long$year)
+
+#ggplot(GreenhouseGasProp_Long, aes(x=year, y=percent,fill = Sector)) + geom_area()
+
+GreenhouseGasTotal_Long <- pivot_longer(GreenhouseGasTotal,
+                                       cols = 2:34, 
+                                       names_to = "year",
+                                       values_to = "total")
+
+GreenhouseGasTotal_Long$year <- as.numeric(GreenhouseGasTotal_Long$year)
+
+ggplot(GreenhouseGasTotal_Long, aes(x=year, y=total,fill = Sector)) + geom_area() + labs(x = "Year", y = "Million tons carbon dioxide equivalent (MtCO2e)", title = "UK Greenhouse Gas Emissions by Source Category")
+
+```
+:::
+:::
+
+## UK Housing and CO^2^ Emissions
+
+```{r}
+#get some data on how much better Europe is than the UK- https://ec.europa.eu/eurostat/databrowser/view/ENV_AC_AINAH_R2__custom_10056783/default/table?lang=en
+
+library(janitor)
+
+EU_Co2Housing <- read_csv("data/EU_CO2_Housing.csv")
+
+EU_Co2Housing22 <- EU_Co2Housing[,c(1,14)]
+colnames(EU_Co2Housing22) <- c("Country", "Year_2022")
+
+EU_Co2Housing_Long <- pivot_longer(EU_Co2Housing,
+                                       cols = 2:14, 
+                                       names_to = "year",
+                                       values_to = "total")
+
+# ggplot(EU_Co2Housing_Long, aes(x=year, y=total, group = Country, colour = Country)) + geom_line() + labs(x = "Year", y = "Million tons carbon dioxide equivalent (MtCO2e)", title = "EU Residential Greenhouse Gas Emissions")
+
+options(scipen=10000)
+ggplot(EU_Co2Housing22) + geom_col(aes(y= reorder(Country, Year_2022), x=Year_2022, fill = Year_2022), show.legend = FALSE) + labs(y = "Country", x = "Tons carbon dioxide equivalent (MtCO2e)", title = "EU Residential Heating/Cooling Emissions") + scale_fill_viridis_c(option = "magma")
+
+```
+
+Source: Eurostat + UK Government
+
+-   Housing in the UK is some of the worst, overall, in Europe for emitting greenhouse gases.
+
+## UK Housing and CO^2^ Emissions
+
+```{r}
+EU_Co2Housing_pp <- read_csv("data/EU_CO2_Housing_per_person.csv")
+
+options(scipen=10000)
+ggplot(EU_Co2Housing_pp) + geom_col(aes(y= reorder(Country, Res_CO2_per_Person), x=Res_CO2_per_Person, fill = Res_CO2_per_Person), show.legend = FALSE) + labs(y = "Country", x = "Tons carbon dioxide equivalent (MtCO2e) per person", title = "EU Residential Heating/Cooling Emissions Per Person") + scale_fill_viridis_c(option = "magma")
+
+```
+
+Source: Eurostat + UK Government
+
+-   Even after adjusting for population, UK housing stock is responsible for emitting far more CO^2^ than housing in countries with much colder climates like Iceland, Sweden, Norway and Finland
+
+## Leaky Homes
+
+::: columns
+::: {.column width="50%"}
+-   In 2021, the National Housing Federation reported that a combination of gas central heating and poor insulation meant that as heat easily leaks from many of the UK's homes, it requires even more gas to heat them.
+
+-   The average family or household in England is currently producing more CO^2^ every year by just living in their home than they are by driving their car!
+
+-   Three in every five (60%) homeowners don't think their home energy use has much of an impact on carbon emissions. More than one in four homeowners (28%) have no plans to make "eco-upgrades" to their homes in the next ten years.
+:::
+
+::: {.column width="50%"}
+[![Heat Loss from a House](images/3096.avif){fig-align="right"}](https://www.theguardian.com/commentisfree/2021/sep/28/britain-homes-energy-crisis-governments-insulation-low-carbon-heating) <https://www.housing.org.uk/news-and-blogs/news/englands-leaky-homes-greater-threat-to-climate-than-cars/>
+:::
+:::
+
+## The UK Housing Stock
+
+::: columns
+::: {.column width="40%"}
+-   UK Housing Stock is incredibly diverse in terms of its morphology and most of it is OLD
+-   Age is relevant as insulation standards are only a relatively recent innovation and there is a conspicuous absence of a national programme of retrofitting to improve old stock
+:::
+
+::: {.column width="60%"}
+![](images/British_Housing.png){fig-align="right" width="70%"}
+:::
+:::
+
+## How do we know how leaky our home is?
+
+::: columns
+::: {.column width="50%"}
+-   Energy Performance Certificates were introduced in England and Wales in August 2007
+-   A valid certificate (they last for 10 years) is now required for any property sold or rented in the UK
+-   Every property gets a current rating - A to G - alongside a potential rating, which relates to what it could achieve with better insulation, double glazing, etc.
+-   EPCs are created by surveyors who use something called the 'Standard Assessment Procedure' (SAP) to rate the building. SAP accounts for things like:
+    -   Size of building
+    -   Age of Building
+    -   Building materials used
+    -   Glazing
+    -   Heating and hot water type
+    -   Type of lighting
+-   The SAP is an imperfect science and prone to human error, but it's the best method currently available
+:::
+
+::: {.column width="50%"}
+[![EPC Certificate](images/EP_Cert.png){fig-align="center" width="70%"}](https://www.gov.uk/find-energy-certificate)
+:::
+:::
+
+## What does the government want?
+
+::: columns
+::: {.column width="50%"}
+-   80% of the homes we will be living in in 2050 are already built now, so we need to focus on improving the housing stock we already have
+-   The Clean Growth Strategy was published in October 2017 and includes several targets to improve energy efficiency:
+    -   to upgrade all fuel poor homes to Energy Performance Certificate (EPC) **band C** by 2030;
+    -   to upgrade as many homes as possible to EPC **band C** by 2035
+
+But is this enough and how are they going to achieve it?
+:::
+
+::: {.column width="50%"}
+[![](images/CleanGrowthStrategy.png){fig-align="center" width="70%"}](https://www.gov.uk/government/publications/clean-growth-strategy)
+:::
+:::
+
+<https://www.gov.uk/government/publications/clean-growth-strategy>
+
+## Making homes more energy efficient + additional benefits & challenges
+
+::: columns
+::: {.column width="50%"}
+-   'Retrofitting' -\> process of improving:
+    -   insulation
+    -   ventilation
+    -   air-tightness
+-   upgrading
+    -   heating (e.g. to heat-pumps)
+    -   lighting (LED bulbs)
+    -   installing smart thermostat and heat control devices
+    -   installing solar panels
+-   Any one could improve energy efficiency, but doing all at once is known as 'Deep Retrofit.'
+:::
+
+::: {.column width="50%"}
+[![](images/HomeRetrofit.png)](https://woodknowledge.wales/gw4-alliance-led-project-to-retrofit-uk-homes/)
+:::
+:::
+
+## Making homes more energy efficient + additional benefits & challenges
+
+-   Retrofitting has other benefits:
+    -   **Health** - The Building Research Establishment [estimates that poor housing costs the NHS £1.4bn per year in additional treatments](https://bregroup.com/news-insights/the-cost-of-poor-housing-to-the-nhs/), with excess cold causing the most problems.
+    -   **Jobs** - National retrofit programme could create thousands of jobs, benefiting the wider economy;
+    -   **Energy security** - making us less reliant on imported fossil gas for heating
+-   But, retrofitting is expensive (up-front cost) - [recent estimates](https://residential.jll.co.uk/insights/research/decarbonising-uk-housing-2024) are that the average cost of retrofitting a property to Grade C or above would cost ***£35,000*** - even basic insulation costs can run into many thousands of pounds.
+-   Saving money on heating will eventually make this money back, but it could take many years
+
+[![](images/cost_breakdown_retrofit.png){fig-align="center"}](https://the3cities.co.uk/retrofit/)
+
+<https://the3cities.co.uk/retrofit>
+
+## What needs to be done?
+
+::: columns
+::: {.column width="50%"}
+-   Insulate Britain - pressure group - Estimates that 1.5 homes per minute need to be retrofitted up until 2050 to hit our legally-binding net-zero target - something that we are currently far from achieving.
+-   Retrofit is expensive
+-   Route retrofit unclear for many people (where should I start, who can do it for me?)
+-   Central government needs to develop proper incentives
+    -   Direct funding (grants)
+    -   or tax incentives
+-   Schemes such as those available in Ireland (where government recommends suppliers, installers etc.) needed to help people get started
+-   Insulate Britain highlights that UK government currently doesn't have a long-term strategy or funding mechanism in place to upgrade/retrofit homes to meet our climate commitments
+:::
+
+::: {.column width="50%"}
+[![](images/InsulateBritain.jpg){fig-align="center" width="70%"}](https://insulatebritain.com/)
+
+[![](images/guardian_insulate.png)](https://www.theguardian.com/environment/2023/apr/09/uk-insulation-scheme-would-take-300-years-to-meet-its-own-targets-say-critics)
+:::
+:::
+
+## How can we get there?
+
+::: columns
+::: {.column width="50%"}
+-   Understanding the various dimensions (scale, location, social etc.) of the housing energy efficiency challenge is crucial to effective strategy and planning.
+
+    -   Which housing / owners should be targeted first to accelerate the transition?
+
+-   Paper in Frontiers in Sustainability (and related working paper) a first effort to define the parameters of the problem
+:::
+
+::: {.column width="50%"}
+[![](images/Frontiers.png)](https://www.frontiersin.org/journals/sustainability/articles/10.3389/frsus.2024.1329034/full)
+:::
+:::
