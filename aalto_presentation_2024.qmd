@@ -32,21 +32,25 @@ slide-number: true
 
 ## What am I going to talk about today?
 
--   A little bit of background on the important (and often overlooked) part that residential buildings play in our journey towards a carbon net-zero country.
+-   Housing
 
--   The leaky homes problem we have in the UK
+    -   A little bit of background on the important (and often overlooked) part that residential buildings play in our journey towards a carbon net-zero country.
 
--   How we can measure leaky homes - Energy Performance Certificates
+    -   The leaky homes problem we have in the UK
 
--   What needs to be done to fix leaky homes and the problems ahead
+    -   How we can measure leaky homes - Energy Performance Certificates
 
--   Overview of findings from recent Frontiers in Sustainability paper which looks at national variations in energy efficiency by property, neighbourhood and local authority type.
+    -   What needs to be done to fix leaky homes and the problems ahead
 
--   Background on the transport sector, inequalities and the role of models in transport planning and net-zero ambitions.
+    -   Overview of findings from recent Frontiers in Sustainability paper which looks at national variations in energy efficiency by property, neighbourhood and local authority type.
 
--   Introduction to activity-based models and how they might offer new perspectives which might assist the transition to net-zero
+-   Transport
 
--   Some ongoing research in the preliminary stages which is going to leverage activity-based models
+    -   Background on the transport sector, inequalities and the role of models in transport planning and net-zero ambitions.
+
+    -   Introduction to activity-based models and how they might offer new perspectives which might assist the transition to net-zero
+
+    -   Some ongoing research in the preliminary stages which is going to leverage activity-based models
 
 -   Observations and conclusions
 
@@ -318,7 +322,6 @@ But is this enough and how are they going to achieve it?
     -   Energy Efficiency (0-100) - how much energy used - related to running costs
     -   Environmental Impact (0-100) - level of CO2 emissions associated with energy use (clean electricity much better than buring coal, for same energy output)
 -   More or less energy efficient / environmentally impactful homes are not spread evenly across the country - some places and some types of neighbourhood are more or less likely to have energy efficient homes
-
 :::
 
 ::: {.column width="50%"}
@@ -347,7 +350,6 @@ Average Energy Efficiency and Environmental Impact by Local Authority - Source, 
 
 ::: columns
 ::: {.column width="40%"}
-
 -   **Energy Efficiency is strongly correleated with the age of the property** - older properties are on average less energy efficient, more modern properties are more energy efficient
 -   Band C (69 and above) is the government target for efficient homes.
     -   If your property was built after 2003, you have a very high probability of being band C or higher
@@ -364,10 +366,12 @@ Average Energy Efficiency and Environmental Impact by Local Authority - Source, 
 
 ::: columns
 ::: {.column width="50%"}
--   Tenure: Whether the house is owner-occupied, privately rented or socially rented is also very important - **Socially rented housing has far better energy efficiency** than all other housing tenures
+-   Tenure: Whether the house is owner-occupied, privately rented or socially rented is also very important - **Socially rented housing has far better energy efficiency** than all other housing tenures (only 30% worse than band C)
 -   Various reasons for this:
     -   social landlords more conscious of the needs of residents, some large retrofit programmes
     -   social housing more likely to be flats
+-   Private Rental housing has a bad reputation for quality and unscrupulous landlords and is bad with around 75% worse than band C
+-   But Owner Occupied housing is worse still, with less than 20% band C or above.
 :::
 
 ::: {.column width="50%"}
@@ -389,12 +393,11 @@ Average Energy Efficiency and Environmental Impact by Local Authority - Source, 
 :::
 :::
 
-
 ## Accounting for Energy Efficiency Variations
 
 ::: columns
 ::: {.column width="40%"}
--   Baseline linear (regression) model - Dependent variable = Energy Efficiency Score ~ building characteristics:
+-   Baseline linear (regression) model - Dependent variable = Energy Efficiency Score \~ building characteristics:
     -   age
     -   dwelling type
     -   tenure
@@ -404,7 +407,7 @@ Average Energy Efficiency and Environmental Impact by Local Authority - Source, 
 :::
 
 ::: {.column width="60%"}
-![](images/baseModel1.png){fig-align="right" width="60%"} 
+![](images/baseModel1.png){fig-align="right" width="60%"}
 :::
 :::
 
@@ -422,3 +425,82 @@ Average Energy Efficiency and Environmental Impact by Local Authority - Source, 
 ![](images/EPC_LAD_Intercepts_resids.png){fig-align="right" width="100%"} <https://www.ucl.ac.uk/bartlett/casa/publications/2023/may/casa-working-paper-233>
 :::
 :::
+
+## Capturing Random Variance and Spatial Hetrogeneity
+
+::: columns
+::: {.column width="50%"}
+-   **Question:** To what extent can variations in energy efficiency be attributed just to property-level factors? And to what extent do local neighbourhood factors and local government influences (much planning and housing policy is devolved to local authorities in the UK) play a part too?
+
+-   Multilevel model extends earlier model to account for similarities/differences at various spatial scales & within different groupings (neighbourhood, local authority) of properties, while controlling for property specific variables (e.g., age, floor area, etc.).
+
+-   The variance components model is baseline Multilevel model and has no explanatory variables, but attributes variation in energy consumption / efficiency per m2 to grouping levels in the model
+:::
+
+::: {.column width="50%"}
+Variance Components model:
+
+$y_{ijk} = \in_{LA}z_{k}+\in_{OA}z_{jk}+\in_{0}z_{ijk}+c$
+
+where:
+
+$y$ = the predicted energy consumption (kWh/m^2^) of a property; $c$ is the *y*-intercept.
+
+• $i$: a particular property
+
+• $j$: a particular OA Output Area - neighbourhood)
+
+• $k$: a particular LA (Local Authority e.g. town or small city level)
+
+Results:
+
+-   geographical location alone—as defined by a property’s OA and LA—can explain about 15% of the variance in predicted energy consumption per m^2^.
+
+-   vast majority of this variance (85%) is between individual properties at the lowest level. Of the variance accounted for by the higher levels, much more can be attributed to differences between neighbourhoods (OAs) (13%) than to differences between LAs (2%).
+:::
+:::
+
+## Capturing Random Variance and Spatial Hetrogeneity
+
+::: columns
+::: {.column width="50%"}
+-   Full model adds property and various grouping factors into the mix and increases the proportion of variance explained by the model as a whole from 15% to 31%, based on the conditional R2.
+-   much of the variance in energy performance (69%) remains unexplained by any of the features of the model. This variation may be attributed to measurement errors such as inconsistencies in measures between surveyors or biases in the surveys etc.
+-   Property features are significant and these together account for about 23% of the overall variance in the estimated energy consumption per property
+-   once we control for age and type, the energy efficiency of privately rented homes appears to be practically indistinguishable from that of owner-occupied properties
+-   after controlling for property mix, more disadvantaged areas seem to have *more* efficient housing
+-   we see little evidence that more affluent groups are preferentially selecting more efficient properties or that they are taking action at higher rates—quite the opposite
+:::
+
+::: {.column width="50%"}
+Full Multilevel model:
+
+$y_{ijk} = m_{0}. x^{'}_{ijk}+m_{1}. x_{jk}\in_{LA}z_{k}+\in_{OA}z_{jk}+\in_{0}z_{ijk}+c$
+
+where:
+
+$m_{0}. x^{'}_{ijk}$ = a vector of variables relating to the properties, e.g. age, tenure, building type, floor area etc.and random (grouping) effects at the neighbourhood and local authority levels
+
+and
+
+$m_{1}. x_{jk}$ = a vector of dummy variables relating to types of neighbourhood or local authority, defined by geodemographic classifications, e.g. multicultural metropolitans, hard-pressed living, rural residents, affluent living etc.
+:::
+:::
+
+## Accounting for Housing Energy Efficiency Variations - Conclusions
+
+-   At the highest geographic scale, residential energy efficiency varies comparatively little between local authorities. All face broadly similar challenges. 
+
+    -   This is perhaps surprising given that local authorities have been given a central role for coordinating efforts in this area for some time
+
+-   At the neighbourhood scale, we do not see strong relationships between the social composition or socio-economic status of neighbourhoods (output areas) and energy efficiency, contrary to what we might have expected
+
+    -   it appears that more socially advantaged groups are *not* choosing (or able) to use their resources to achieve more sustainable housing
+
+    -   qualitative research from Scotland suggests a general awareness of and support for the “net zero” goal but, on the other, limited awareness of what this might mean for them or any sense that they were responsible for acting in relation to their own homes
+
+    -   Barriers cited by homeowners included costs but also a sense that, without “a clear, personal financial benefit from upgrading,” it was for Government or business to lead the way
+
+-   Once we allow for the fact that private landlords tend to own smaller, older properties, the energy efficiency levels reported appear no lower than those for owner-occupiers
+
+    -   There has been much discussion of the reasons why private landlords may be less likely to invest in energy efficiency since it is tenants rather than landlords who get the direct benefit from improvements in terms of lower bills. However, our data do not support the underlying premise that energy efficiency is therefore lower in the private rented sector
