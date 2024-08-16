@@ -46,7 +46,7 @@ slide-number: true
 
 -   Transport
 
-    -   Background on the transport sector, inequalities and the role of models in transport planning and net-zero ambitions.
+    -   Background on UK transport policy, the neglect of social inequalities in this domain and the role of models in transport planning and net-zero ambitions.
 
     -   Introduction to activity-based models and how they might offer new perspectives which might assist the transition to net-zero
 
@@ -475,7 +475,7 @@ Results:
 ::: {.column width="50%"}
 Full Multilevel model:
 
-$y_{ijk} = m_{0}. x^{'}_{ijk}+m_{1}. x_{jk}\in_{LA}z_{k}+\in_{OA}z_{jk}+\in_{0}z_{ijk}+c$
+$y_{ijk} = m_{0}. x^{'}_{ijk}+m_{1}. x_{jk}+\in_{LA}z_{k}+\in_{OA}z_{jk}+\in_{0}z_{ijk}+c$
 
 where:
 
@@ -487,7 +487,7 @@ $m_{1}. x_{jk}$ = a vector of dummy variables relating to types of neighbourhood
 :::
 :::
 
-## Accounting for Housing Energy Efficiency Variations - Conclusions
+## Dimensions of the Housing Energy Efficiency Challenge - Conclusions
 
 -   At the highest geographic scale, residential energy efficiency varies comparatively little between local authorities. All face broadly similar challenges. 
 
@@ -504,3 +504,35 @@ $m_{1}. x_{jk}$ = a vector of dummy variables relating to types of neighbourhood
 -   Once we allow for the fact that private landlords tend to own smaller, older properties, the energy efficiency levels reported appear no lower than those for owner-occupiers
 
     -   There has been much discussion of the reasons why private landlords may be less likely to invest in energy efficiency since it is tenants rather than landlords who get the direct benefit from improvements in terms of lower bills. However, our data do not support the underlying premise that energy efficiency is therefore lower in the private rented sector
+
+## What about Transport and Net-Zero?
+
+::: columns
+::: {.column width="50%"}
+-   UK government keen to decarbonise transport - 2021 Department for Transport Report:
+
+-   "We cannot simply believe that zero emission cars and lorries will meet all our climate goals or solve all our problems. They will not."
+
+-   "we must increase the share of trips taken by public transport, cycling and walking. We want to make these modes the natural first choice for all who can take them"
+
+-   Great start, BUT - issues of **EQUITY** (i.e. will everyone benefit equally and according to their needs in this transition) **NOT** mentioned **AT ALL** in the report.
+:::
+
+::: {.column width="50%"}
+[![](images/decarbon_transport.png)](https://assets.publishing.service.gov.uk/media/610d63ffe90e0706d92fa282/decarbonising-transport-a-better-greener-britain.pdf)
+:::
+:::
+
+## What does transport decarbonisation look like from a strategic level in the UK?
+
+-   Aside from some acknowledgement of the health benefits afforded by active travel in Government documentation, most policy has a narrow sector focus:
+
+    -   shift to zero emission vehicles
+
+    -   encourage more public transport use (to reduce car use)
+
+    -   encourage active travel (also mainly to reduce car use)
+
+-   Goals such as 'reducing congestion', 'improving air quality', 'increase road vehicle occupancy' - while laudable, fail to acknowledge the wider role that transport plays in the social and economic systems of the country.
+
+-   Incorporation of sub-national Transport Bodies (STBs) in 2016 represented devolution of transport planning from central to regional bodies, but not clear that their collective strategic foci stretching beyond transport-orientated parameters
