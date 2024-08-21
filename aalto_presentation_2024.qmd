@@ -523,6 +523,45 @@ $m_{1}. x_{jk}$ = a vector of dummy variables relating to types of neighbourhood
 :::
 :::
 
+## Transport, Net-zero and Equity
+
+::: columns
+::: {.column width="33%"}
+-   In the UK, transport investment justified in terms of economic benefits, journey time reductions, carbon savings etc. 
+-   Models commissioned by government and used to support transport policy and investment in UK often narrowly focused on these outcomes
+-   Little attention has been paid to justifications relating to the mediating effect that transport has on social inequalities
+-   Danger that in the rush to decarbonise, some already disadvantaged groups may stand to lose out - e.g. those who rely on cars for work and who can't easily shift, the rural poor, disabled or elderly
+
+
+:::
+
+::: {.column width="33%"}
+![](images/transport_equity.png)
+:::
+
+::: {.column width="33%"}
+![](images/ttrv20.png)
+:::
+:::
+
+
+## CASA / Arup City Modelling Lab
+
+::: columns
+::: {.column width="80%"}
+-   Arup City Modelling lab has, for a decade, been developing large-scale activity-based transport models for clients across the world to assist with transport planning and policy making
+-   Where Arup's models and tooling are developed with, primarily, client-centred outcomes in mind, our academic motivation is see if we can repurpose these models to delve deeper and more critically into wider sets of equity-related outcomes:
+    -   what are the modelling/policy/decision making dynamics and interactions between client and consultant that lead to regional transport decisions being made? How are regional transport being models used? How could they be used with respect to social equity?
+    -   what are the equity considerations around the transition from fossil-fuelled to electric private vehicles? Can we develop a better, micro-level activity-based understanding of car dependency? What mitigating or exacerbating effects might new technologies like vehicle-to-grid charging present?
+    -   How can complex, agent-based behaviourally-orientated transport models (such as MATSIMs) can be used to inform decisions around the provision of public transit - particularly buses - in UK transport systems? How might artificial intelligence methods be applied in developing generative solutions to various aspects of bus provision in different urban and regional settings?
+:::
+
+::: {.column width="20%"}
+![](images/CML_logo_CL.png)
+:::
+:::
+
+
 ## What does transport decarbonisation look like from a strategic level in the UK?
 
 -   Aside from some acknowledgement of the health benefits afforded by active travel in Government documentation, most policy has a narrow sector focus:
