@@ -48,6 +48,8 @@ slide-number: true
 
     -   Background on UK transport policy, the neglect of social inequalities in this domain and the role of models in transport planning and net-zero ambitions.
 
+    -   CASA's new collaboration with Arup City Modelling Lab and how we are going to use activity-based models to explore equity in transport planning and policy.
+
     -   Introduction to activity-based models and how they might offer new perspectives which might assist the transition to net-zero
 
     -   Some ongoing research in the preliminary stages which is going to leverage activity-based models
@@ -527,12 +529,11 @@ $m_{1}. x_{jk}$ = a vector of dummy variables relating to types of neighbourhood
 
 ::: columns
 ::: {.column width="33%"}
--   In the UK, transport investment justified in terms of economic benefits, journey time reductions, carbon savings etc. 
+-   In the UK, transport investment justified in terms of economic benefits, journey time reductions, carbon savings etc.
 -   Models commissioned by government and used to support transport policy and investment in UK often narrowly focused on these outcomes
 -   Little attention has been paid to justifications relating to the mediating effect that transport has on social inequalities
 -   Danger that in the rush to decarbonise, some already disadvantaged groups may stand to lose out - e.g. those who rely on cars for work and who can't easily shift, the rural poor, disabled or elderly
-
-
+-   New paper from our group exploring some of the issues -\>
 :::
 
 ::: {.column width="33%"}
@@ -544,14 +545,13 @@ $m_{1}. x_{jk}$ = a vector of dummy variables relating to types of neighbourhood
 :::
 :::
 
-
 ## CASA / Arup City Modelling Lab
 
 ::: columns
 ::: {.column width="80%"}
--   Arup City Modelling lab has, for a decade, been developing large-scale activity-based transport models for clients across the world to assist with transport planning and policy making
--   Where Arup's models and tooling are developed with, primarily, client-centred outcomes in mind, our academic motivation is see if we can repurpose these models to delve deeper and more critically into wider sets of equity-related outcomes:
-    -   what are the modelling/policy/decision making dynamics and interactions between client and consultant that lead to regional transport decisions being made? How are regional transport being models used? How could they be used with respect to social equity?
+-   Arup City Modelling lab has, for a decade, been developing large-scale activity-based transport models for clients across the world to assist with transport planning and policy making - many recent projects around net-zero transition
+-   Where Arup's models and tooling are developed with, primarily, client-centred outcomes in mind, our *academic motivation* is see if we can re-purpose these models to delve deeper and more critically into wider sets of equity-related outcomes:
+    -   what are the modelling/policy/decision making dynamics and interactions between client and consultant that lead to regional transport decisions being made? How are regional transport models being used? How could they be used with respect to social equity?
     -   what are the equity considerations around the transition from fossil-fuelled to electric private vehicles? Can we develop a better, micro-level activity-based understanding of car dependency? What mitigating or exacerbating effects might new technologies like vehicle-to-grid charging present?
     -   How can complex, agent-based behaviourally-orientated transport models (such as MATSIMs) can be used to inform decisions around the provision of public transit - particularly buses - in UK transport systems? How might artificial intelligence methods be applied in developing generative solutions to various aspects of bus provision in different urban and regional settings?
 :::
@@ -561,17 +561,243 @@ $m_{1}. x_{jk}$ = a vector of dummy variables relating to types of neighbourhood
 :::
 :::
 
+## Activity-Based Transport Models
 
-## What does transport decarbonisation look like from a strategic level in the UK?
+[![](images/activity_plan.png)](https://medium.com/arupcitymodelling/pandemic-activity-modifier-intro-3d2dccbc716e)
 
--   Aside from some acknowledgement of the health benefits afforded by active travel in Government documentation, most policy has a narrow sector focus:
+-   Activity-based models focus on the individual activities of (simulated) people (agents) and are able to capture the complexities of daily life, considering how people allocate time to activities throughout the day and on different days of the week
 
-    -   shift to zero emission vehicles
+-   Individual decisions are based on personal attributes (age, job, wealth etc.), preferences (whether prefer to drive or cycle) and constraints (whether can afford a car, have children to take to school) etc.
 
-    -   encourage more public transport use (to reduce car use)
+-   Agents in the model can respond to physical and political environments - thus useful for testing different policy scenarios (road pricing, free bus travel for children etc.)
 
-    -   encourage active travel (also mainly to reduce car use)
+-   Allow for considerable granularity (spatial, temporal, agent attribute) but can be large (numbers of agents), computationally expensive, require detailed data inputs (travel diaries, road networks etc.) difficult to calibrate and not easily used by non-experts.
 
--   Goals such as 'reducing congestion', 'improving air quality', 'increase road vehicle occupancy' - while laudable, fail to acknowledge the wider role that transport plays in the social and economic systems of the country.
+## Transport East Project - decarbonising regional transport
 
--   Incorporation of sub-national Transport Bodies (STBs) in 2016 represented devolution of transport planning from central to regional bodies, but not clear that their collective strategic foci stretching beyond transport-orientated parameters
+::: columns
+::: {.column width="50%"}
+-   Claude Lynch - PhD student in our group - is using activity-based model implemented using MATSIM developed by Arup for Transport East (sub-national transport body)
+
+-   Simulates a 10% version of East of England population and their daily activities - 600,000 agents
+
+-   Aim to evaluate transport planning interventions that help get us closer to a 'net-zero' transit system in the region - while examining how these might also affect socio-economic inequalities
+
+BUT?
+
+-   How are transport models and tools like the TE MATSIM deployed in the real world (and how to they affect policy change)?
+
+-   Interviewing practitioners from 7 Sub-National Transport Bodies in England, Department for Transport and Transport Planning Consultancies
+:::
+
+::: {.column width="50%"}
+![](images/TE_network.png)
+:::
+:::
+
+## Transport East Project - decarbonising regional transport
+
+::: columns
+::: {.column width="50%"}
+Initial findings from Interviews:
+
+-   Transport planning as a practice is very far away from transport planning academia: *"You build this tool, based on lots of data and analysis and whatever else, and you use it once to get a Benefit Cost Ratio out of it. … it's all driven by just one thing, and it's how do you feed that into that sausage machine, and at the end, something comes out."* (Amey 1, 74:56)
+-   *"Despite all the best intentions today, we might calculate these things and put them in, but you can't escape the fact that most things we do, we're looking at what's the revenue impact, revenue’s the currency that we all work to. There's lots of nice things out there that we would all want to do, but you have to be able to afford them."* (TfL 2, 50:40)
+-   The financial environment around transport planning encourages bad practice with respect to collaboration and open source development - lack of investment in in-house expertise means model development outsourced to consultants: *"We had to fight to retain IP of our models done by consultants, like, how can you have additive agglomerative evidence base if you're paying for everything on spec every time? It just doesn't work.”* (TfN 2, 25:07)
+:::
+
+::: {.column width="50%"}
+![](images/STBs.png)
+:::
+:::
+
+## De-carbonising Private Vehicle Transit
+
+-   Maria Wood (PhD Student) looking at equity issues around car dependence and the transition to electric vehicles
+-   New registrations declining and electric vehicles increasing
+-   But, car usage still high and how do we transition to a decarbonised system in an equitable way?
+
+<iframe title="Registrations of all new cars in the UK" aria-label="Interactive area chart" id="datawrapper-chart-8qZ4u" src="https://datawrapper.dwcdn.net/8qZ4u/24/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="523" data-external="1">
+
+</iframe>
+
+```{=html}
+<script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();</script>
+```
+## Equity, vulnerability, and flexibility
+
+::: columns
+::: {.column width="35%"}
+::: r-fit-text
+-   Equity can be seen as minimising\
+    transport vulnerability across\
+    the whole population
+
+-   We can consider flexibility to\
+    be a form of capital, much\
+    like money or time
+
+-   Vulnerability can be seen\
+    through the lens of\
+    flexibility capacity
+
+-   **Many facets of flexibility**
+:::
+:::
+
+::: {.column width="65%"}
+<!-- <iframe width="1516" height="864" src="https://miro.com/app/live-embed/uXjVNZ_4nvo=/?moveToViewport=8024,8953,14370,9125&embedId=63268582017" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe> -->
+
+![](images/maria_framework3.jpg){fig-align="right" width="1000"}
+:::
+:::
+
+## Car dependency
+
+**Car dependency is a manifestation of low mode choice flexibility capacity**
+
++---------------+-----------------------------------------------------------+
+| Dependency    | Description                                               |
++:==============+:==========================================================+
+| Individual    | A person is dependent on their private vehicle in general |
++---------------+-----------------------------------------------------------+
+| Trip-based    | Certain journeys are dependent on private vehicles        |
+|               |                                                           |
+|               | e.g. large shopping trips or escorting others             |
++---------------+-----------------------------------------------------------+
+| Structural    | Physical dependency on private vehicles                   |
+|               |                                                           |
+|               | e.g. disability or lack of provision of alternatives      |
++---------------+-----------------------------------------------------------+
+| Conscious     | Perceived dependency on private vehicles                  |
+|               |                                                           |
+|               | e.g. habit, convenience, preference                       |
++---------------+-----------------------------------------------------------+
+
+## Quantitative modelling of flexibility
+
+-   Lack of robust quantitative analysis of equity impacts in transport transition
+
+-   Aim to inform which policies are most effective at delivering decarbonisation while maximizing equity
+
+-   Use calibrated Arup MATSIM for a UK region or city (e.g. Sheffield) to understand this with flexibility capability measured as a kind of utility score
+
+    -   Where under different model runs and scenarios, agents select a first-choice travel preference (with associated utility score) from a range of possibilities
+
+    -   Can 2nd, 3rd, nth choices considered and scored be used to model flexibility capital for different socio-economic groups in the model?
+
+    -   For those with lower traditional flexibility capital, what benefits might novel flexibility innovations like Vehicle-To-Grid charging bring?
+
+    -   Can benefits of system-wide demand peak-smoothing for electricity be shared?
+
+[![](images/demand_smooth.png)](https://medium.com/arupcitymodelling/work-smarter-not-harder-fbac2017739a)
+
+## Buses, Net-Zero and Equity
+
+-   Tom Murat (PhD Student) - looking at how we can use agent-based models to understand the equity implications of bus provision in UK cities
+-   Low-income population most likely to use and rely on buses.
+-   69% of Londoners earning under £20,000 use buses at least weekly, compared to 59% of all Londoners (Rosenberg, 2022).
+-   10% of all bus passengers are disabled (Rosenberg, 2022).
+
+## State of Buses
+
+::: columns
+::: {.column width="50%"}
+-   **Privatisation** - Crash in bus ridership and route availability.
+-   **£2 fare** -- Introduced to increase ridership since COVID-19.
+-   **Bus Franchising** -- Devolution of transport to combined authorities - Greater Manchester (2023), West Midlands (2025), Liverpool (2026)
+:::
+
+::: {.column width="50%"}
+![City buses in motion](images/bus_data.svg){fig-align="left" width="100%"}
+:::
+:::
+
+## Toy Model Outline
+
+::: columns
+::: {.column width="50%"}
+-   Using Matsim -- Agent Based Modelling
+
+-   Londinium model - Semi synthetic dataset with 100 agents covering Fulham, Chelsea, Battersea and South Kensington.
+
+    -   Developed by Arup, open access
+
+-   Policy Ideas Tested: Free Buses, No Buses, No Tube, Increasing Car Cost
+
+-   Measures: Travel Time, Total Distance, Mode Share
+
+-   Purpose: Learn the model, what's possible and what's not
+:::
+
+::: {.column width="50%"}
+![](images/londinium-pt-network.png){width="100%"}
+:::
+:::
+
+## Model Results - Mode Share
+
+![](images/mode_share.png){width="90%"}
+
+## Model Results - Average Distance
+
+![](images/Distance.png){width="90%"}
+
+
+## Model Results - Average Duration
+
+
+![](images/duration.png){width="90%"}
+
+## Going Forward
+
+
+::: columns
+::: {.column width="50%"}
+-   Implement lessons learnt into a calibrated Sheffield model.
+
+-   Demand Responsive Transport -- Flexible transport options
+
+-   Implementation of AI:
+
+    -   Bus scheduling (Ai, G. et al. (2022))
+
+    -   Express Bus Routes (Rodriguez J. et al. (2022))
+
+    -   Network Changes
+
+-   Equity Measures - Can we develop metrics outside of\
+    traditional transport metrics (Mode Share, Travel Time)\
+    to measure equity?
+:::
+
+::: {.column width="50%"}
+![View of Sheffield](images/benjamin-elliott-kTHZZE8o_10-unsplash.jpg){width="60%"} ![Bus in use](images/dial_a_ride.jpeg){width="60%"}
+:::
+:::
+
+## Transport, Net-Zero & Equity Conclusions
+
+-   Still in the early stages of our exploration in all of these topics, but all three PhD\
+    projects represent slightly different but complementary perspectives on the same broad\
+    challenge - decarbonising our transport system while keeping social considerations front-and-centre.
+
+-   Always tempting to view any new innovation (regional ABMs for transport planning,\
+    transition to electric cars, generative AI for scheduling and routing) as potential silver\
+    bullets to challenging problems, but fully evaluating pros and cons needs time and space.
+
+-   Consultancy world often ahead of academic world in developing quick/plausible solutions\
+    to challenges posed by clients. But narrow delivery focus rarely allows for deeper\
+    evaluation or experimentation that academics are afforded the time to explore.
+
+-   CASA/Arup PhD projects hopefully go some way to bridging this gap - watch this space!
+
+
+## Overall Observations and Conclusions
+
+-   All countries are grappling with how to transition various sectors to low-carbon in order to meet internationally agreed targets
+-   In the UK housing and transport are two of the biggest challenges but both have important social dimensions which need addressing
+    -   in order to both affect the transition and target improvements more effectively (in the case of housing)
+    -   and to ensure that the transition is equitable and fair (in the case of transport)
+-   Urban models can play a part in building an evidence base for policy and decision making in these areas
+-   But, challenges of capacity and scope persist at the level of policy and decision making, so as academics we need to be vocal in advocating for attention to be paid to the social dimensions of these transitions
