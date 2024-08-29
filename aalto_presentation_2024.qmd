@@ -446,6 +446,7 @@ Average Energy Efficiency and Environmental Impact by Local Authority - Source, 
 -   Map on the left: residuals
     -   Avg EPC values are lower/worse (\<1 - red) or higher/better (\>1 - orange to blue) than expected, given the housing stock mix.
     -   Central London, in particular, Islington, Hackney and Hammersmith and Fulham performs ***worse*** than expected given the benefits afforded by stock-mix, alongside Harlow in Essex, Eastleigh in Hampshire, Norwich, Lincoln and Sunderland
+    -   South West actually performs ***better*** than we would expect, given the stock it has
 :::
 
 ::: {.column width="50%"}
@@ -493,28 +494,32 @@ where:
 
 $y$ = the predicted energy consumption (kWh/m2) of a property; $c$ is the y-intercept.
 
-• $i$: a particular property
-
-• $j$: a particular OA Output Area - neighbourhood)
-
 • $k$: a particular LA (Local Authority e.g. town or small city level)
+
+• $j$: a particular OA (Output Area) - neighbourhood)
+
+• $i$: a particular property
 
 Results:
 
-geographical location alone---as defined by a property's OA and LA---can explain about 15% of the variance in predicted energy consumption per m2.
+-   Spatial components alone---as defined by a property, neighbourhood/OA and LA---can explain about 15% of the variance in predicted energy consumption per m2.
 
-vast majority of this variance (85%) is between individual properties at the lowest level. Of the variance accounted for by the higher levels, much more can be attributed to differences between neighbourhoods (OAs) (13%) than to differences between LAs (2%).
+-   Most of this variance (85%) ***between individual properties***. Of the variance accounted for by the higher geographic levels, much more can be attributed to differences between neighbourhoods (OAs) (13%) than to differences between LAs (2%)
+
+-   Shows that variance in energy performance less influenced by local policies or neighbourhood characteristics and more down to property owners
 
 ## Capturing Random Variance and Spatial Hetrogeneity
 
 ::: columns
 ::: {.column width="50%"}
--   Full model adds property and various grouping factors into the mix and increases the proportion of variance explained by the model as a whole from 15% to 31%, based on the conditional R2.
--   much of the variance in energy performance (69%) remains unexplained by any of the features of the model. This variation may be attributed to measurement errors such as inconsistencies in measures between surveyors or biases in the surveys etc.
--   Property features are significant and these together account for about 23% of the overall variance in the estimated energy consumption per property
--   once we control for age and type, the energy efficiency of privately rented homes appears to be practically indistinguishable from that of owner-occupied properties
--   after controlling for property mix, more disadvantaged areas seem to have *more* efficient housing
--   we see little evidence that more affluent groups are preferentially selecting more efficient properties or that they are taking action at higher rates---quite the opposite
+-   Full model adds property factors into the mix and increases the proportion of variance explained by the model as a whole from 15% to 31%, based on the conditional R2.
+-   Most variance in energy performance (69%) remains unexplained by any of the features of the model.
+    -   Why? Likely measurement errors and inconsistencies between surveyors scoring properties
+    -   Some research has shown large numbers of scores vary between surveyors
+-   Property features are significant and account for 23% of the overall variance in estimated energy consumption
+-   Controling for age and type -\> the energy efficiency of privately rented homes almost identical to owner-occupied properties
+-   Controlling for property mix, more disadvantaged areas seem to have *more* efficient housing
+-   Little evidence that more affluent groups preferentially selecting more efficient properties or that they are taking action at higher rates---quite the opposite
 :::
 
 ::: {.column width="50%"}
@@ -604,7 +609,7 @@ $m_{1}. x_{jk}$ = a vector of dummy variables relating to types of neighbourhood
 :::
 :::
 
-## Activity-Based Transport Models
+## Activity-Based Transport Models - Brief Intro
 
 [![](images/activity_plan.png)](https://medium.com/arupcitymodelling/pandemic-activity-modifier-intro-3d2dccbc716e)
 
@@ -629,8 +634,6 @@ $m_{1}. x_{jk}$ = a vector of dummy variables relating to types of neighbourhood
 BUT?
 
 -   How are transport models and tools like the TE MATSIM deployed in the real world (and how to they affect policy change)?
-
--   Interviewing practitioners from 7 Sub-National Transport Bodies in England, Department for Transport and Transport Planning Consultancies
 :::
 
 ::: {.column width="50%"}
@@ -642,16 +645,75 @@ BUT?
 
 ::: columns
 ::: {.column width="50%"}
-Initial findings from Interviews:
+Initial qualitative research:
 
--   Transport planning as a practice is very far away from transport planning academia: *"You build this tool, based on lots of data and analysis and whatever else, and you use it once to get a Benefit Cost Ratio out of it. ... it's all driven by just one thing, and it's how do you feed that into that sausage machine, and at the end, something comes out."* (Amey 1, 74:56)
--   *"Despite all the best intentions today, we might calculate these things and put them in, but you can't escape the fact that most things we do, we're looking at what's the revenue impact, revenue's the currency that we all work to. There's lots of nice things out there that we would all want to do, but you have to be able to afford them."* (TfL 2, 50:40)
--   The financial environment around transport planning encourages bad practice with respect to collaboration and open source development - lack of investment in in-house expertise means model development outsourced to consultants: *"We had to fight to retain IP of our models done by consultants, like, how can you have additive agglomerative evidence base if you're paying for everything on spec every time? It just doesn't work."* (TfN 2, 25:07)
+-   Who is using transport models in applied situations?
+-   What kinds of projects are they being used to simulate?
+-   What kind of data is being pulled out of them?
+-   How well is that data understood?
+
+Interviewed practitioners from
+
+-   7 Sub-National Transport Bodies in England,
+
+-   Department for Transport and
+
+-   Transport Planning Consultancies
 :::
 
 ::: {.column width="50%"}
 ![](images/STBs.png)
 :::
+:::
+
+## Transport East Project - decarbonising regional transport
+
+Initial findings from Interviews:
+
+::: r-fit-text
+Transport planning as a practice is very far away from transport planning academia:
+
+*"You build this tool, based on lots of data and analysis and whatever else, and you*
+
+*use it once to get a Benefit Cost Ratio out of it. ... it's all driven by just one *
+
+*thing, and it's how do you feed that into that sausage machine, and at the end, *
+
+*something comes out."*
+
+(Amey 1, 74:56)
+:::
+
+## Transport East Project - decarbonising regional transport
+
+::: r-fit-text
+*"Despite all the best intentions today, we might calculate these things and put them *
+
+*in, but you can't escape the fact that most things we do, we're looking at what's the* 
+
+*revenue impact, revenue's the currency that we all work to. There's lots of nice things* 
+
+*out there that we would all want to do, but you have to be able to afford them." *
+
+(TfL 2, 50:40)
+:::
+
+## Transport East Project - decarbonising regional transport
+
+::: r-fit-text
+The financial environment around transport planning encourages bad practice with respect 
+
+to collaboration and open source development - lack of investment in in-house expertise 
+
+means model development outsourced to consultants: 
+
+*"We had to fight to retain IP of our models done by consultants, like, how can you have* 
+
+*additive agglomerative evidence base if you're paying for everything on spec every time?*
+
+*It just doesn't work."* 
+
+(TfN 2, 25:07)
 :::
 
 ## De-carbonising Private Vehicle Transit

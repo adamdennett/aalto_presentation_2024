@@ -806,6 +806,7 @@ Professor Adam Dennett - <span class="citation" data-cites="adam_dennett">@adam_
 <ul>
 <li>Avg EPC values are lower/worse (&lt;1 - red) or higher/better (&gt;1 - orange to blue) than expected, given the housing stock mix.</li>
 <li>Central London, in particular, Islington, Hackney and Hammersmith and Fulham performs <strong><em>worse</em></strong> than expected given the benefits afforded by stock-mix, alongside Harlow in Essex, Eastleigh in Hampshire, Norwich, Lincoln and Sunderland</li>
+<li>South West actually performs <strong><em>better</em></strong> than we would expect, given the stock it has</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:50%;">
@@ -846,24 +847,31 @@ Professor Adam Dennett - <span class="citation" data-cites="adam_dennett">@adam_
 <p><span class="math inline">\(y_{ijk} = \in_{LA}z_{k}+\in_{OA}z_{jk}+\in_{0}z_{ijk}+c\)</span></p>
 <p>where:</p>
 <p><span class="math inline">\(y\)</span>&nbsp;= the predicted energy consumption (kWh/m2) of a property;&nbsp;<span class="math inline">\(c\)</span>&nbsp;is the&nbsp;y-intercept.</p>
-<p>• <span class="math inline">\(i\)</span>: a particular property</p>
-<p>• <span class="math inline">\(j\)</span>: a particular OA Output Area - neighbourhood)</p>
 <p>• <span class="math inline">\(k\)</span>: a particular LA (Local Authority e.g.&nbsp;town or small city level)</p>
+<p>• <span class="math inline">\(j\)</span>: a particular OA (Output Area) - neighbourhood)</p>
+<p>• <span class="math inline">\(i\)</span>: a particular property</p>
 <p>Results:</p>
-<p>geographical location alone—as defined by a property’s OA and LA—can explain about 15% of the variance in predicted energy consumption per m2.</p>
-<p>vast majority of this variance (85%) is between individual properties at the lowest level. Of the variance accounted for by the higher levels, much more can be attributed to differences between neighbourhoods (OAs) (13%) than to differences between LAs (2%).</p>
+<ul>
+<li><p>Spatial components alone—as defined by a property, neighbourhood/OA and LA—can explain about 15% of the variance in predicted energy consumption per m2.</p></li>
+<li><p>Most of this variance (85%) <strong><em>between individual properties</em></strong>. Of the variance accounted for by the higher geographic levels, much more can be attributed to differences between neighbourhoods (OAs) (13%) than to differences between LAs (2%)</p></li>
+<li><p>Shows that variance in energy performance less influenced by local policies or neighbourhood characteristics and more down to property owners</p></li>
+</ul>
 </section>
 <section id="capturing-random-variance-and-spatial-hetrogeneity-2" class="slide level2">
 <h2>Capturing Random Variance and Spatial Hetrogeneity</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li>Full model adds property and various grouping factors into the mix and increases the proportion of variance explained by the model as a whole from 15% to 31%, based on the conditional R2.</li>
-<li>much of the variance in energy performance (69%) remains unexplained by any of the features of the model. This variation may be attributed to measurement errors such as inconsistencies in measures between surveyors or biases in the surveys etc.</li>
-<li>Property features are significant and these together account for about 23% of the overall variance in the estimated energy consumption per property</li>
-<li>once we control for age and type, the energy efficiency of privately rented homes appears to be practically indistinguishable from that of owner-occupied properties</li>
-<li>after controlling for property mix, more disadvantaged areas seem to have <em>more</em> efficient housing</li>
-<li>we see little evidence that more affluent groups are preferentially selecting more efficient properties or that they are taking action at higher rates—quite the opposite</li>
+<li>Full model adds property factors into the mix and increases the proportion of variance explained by the model as a whole from 15% to 31%, based on the conditional R2.</li>
+<li>Most variance in energy performance (69%) remains unexplained by any of the features of the model.
+<ul>
+<li>Why? Likely measurement errors and inconsistencies between surveyors scoring properties</li>
+<li>Some research has shown large numbers of scores vary between surveyors</li>
+</ul></li>
+<li>Property features are significant and account for 23% of the overall variance in estimated energy consumption</li>
+<li>Controling for age and type -&gt; the energy efficiency of privately rented homes almost identical to owner-occupied properties</li>
+<li>Controlling for property mix, more disadvantaged areas seem to have <em>more</em> efficient housing</li>
+<li>Little evidence that more affluent groups preferentially selecting more efficient properties or that they are taking action at higher rates—quite the opposite</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p>Full Multilevel model:</p>
@@ -949,8 +957,8 @@ Professor Adam Dennett - <span class="citation" data-cites="adam_dennett">@adam_
 </div>
 </div>
 </section>
-<section id="activity-based-transport-models" class="slide level2">
-<h2>Activity-Based Transport Models</h2>
+<section id="activity-based-transport-models---brief-intro" class="slide level2">
+<h2>Activity-Based Transport Models - Brief Intro</h2>
 
 <img data-src="images/activity_plan.png" class="r-stretch quarto-figure-center"><ul>
 <li><p>Activity-based models focus on the individual activities of (simulated) people (agents) and are able to capture the complexities of daily life, considering how people allocate time to activities throughout the day and on different days of the week</p></li>
@@ -970,8 +978,7 @@ Professor Adam Dennett - <span class="citation" data-cites="adam_dennett">@adam_
 </ul>
 <p>BUT?</p>
 <ul>
-<li><p>How are transport models and tools like the TE MATSIM deployed in the real world (and how to they affect policy change)?</p></li>
-<li><p>Interviewing practitioners from 7 Sub-National Transport Bodies in England, Department for Transport and Transport Planning Consultancies</p></li>
+<li>How are transport models and tools like the TE MATSIM deployed in the real world (and how to they affect policy change)?</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/TE_network.png"></p>
@@ -982,15 +989,56 @@ Professor Adam Dennett - <span class="citation" data-cites="adam_dennett">@adam_
 <h2>Transport East Project - decarbonising regional transport</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>Initial findings from Interviews:</p>
+<p>Initial qualitative research:</p>
 <ul>
-<li>Transport planning as a practice is very far away from transport planning academia: <em>“You build this tool, based on lots of data and analysis and whatever else, and you use it once to get a Benefit Cost Ratio out of it. … it’s all driven by just one thing, and it’s how do you feed that into that sausage machine, and at the end, something comes out.”</em> (Amey 1, 74:56)</li>
-<li><em>“Despite all the best intentions today, we might calculate these things and put them in, but you can’t escape the fact that most things we do, we’re looking at what’s the revenue impact, revenue’s the currency that we all work to. There’s lots of nice things out there that we would all want to do, but you have to be able to afford them.”</em> (TfL 2, 50:40)</li>
-<li>The financial environment around transport planning encourages bad practice with respect to collaboration and open source development - lack of investment in in-house expertise means model development outsourced to consultants: <em>“We had to fight to retain IP of our models done by consultants, like, how can you have additive agglomerative evidence base if you’re paying for everything on spec every time? It just doesn’t work.”</em> (TfN 2, 25:07)</li>
+<li>Who is using transport models in applied situations?</li>
+<li>What kinds of projects are they being used to simulate?</li>
+<li>What kind of data is being pulled out of them?</li>
+<li>How well is that data understood?</li>
+</ul>
+<p>Interviewed practitioners from</p>
+<ul>
+<li><p>7 Sub-National Transport Bodies in England,</p></li>
+<li><p>Department for Transport and</p></li>
+<li><p>Transport Planning Consultancies</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/STBs.png"></p>
 </div>
+</div>
+</section>
+<section id="transport-east-project---decarbonising-regional-transport-2" class="slide level2">
+<h2>Transport East Project - decarbonising regional transport</h2>
+<p>Initial findings from Interviews:</p>
+<div class="r-fit-text">
+<p>Transport planning as a practice is very far away from transport planning academia:</p>
+<p><em>“You build this tool, based on lots of data and analysis and whatever else, and you</em></p>
+<p><em>use it once to get a Benefit Cost Ratio out of it. … it’s all driven by just one </em></p>
+<p><em>thing, and it’s how do you feed that into that sausage machine, and at the end, </em></p>
+<p><em>something comes out.”</em></p>
+<p>(Amey 1, 74:56)</p>
+</div>
+</section>
+<section id="transport-east-project---decarbonising-regional-transport-3" class="slide level2">
+<h2>Transport East Project - decarbonising regional transport</h2>
+<div class="r-fit-text">
+<p><em>“Despite all the best intentions today, we might calculate these things and put them </em></p>
+<p><em>in, but you can’t escape the fact that most things we do, we’re looking at what’s the</em></p>
+<p><em>revenue impact, revenue’s the currency that we all work to. There’s lots of nice things</em></p>
+<p><em>out there that we would all want to do, but you have to be able to afford them.” </em></p>
+<p>(TfL 2, 50:40)</p>
+</div>
+</section>
+<section id="transport-east-project---decarbonising-regional-transport-4" class="slide level2">
+<h2>Transport East Project - decarbonising regional transport</h2>
+<div class="r-fit-text">
+<p>The financial environment around transport planning encourages bad practice with respect</p>
+<p>to collaboration and open source development - lack of investment in in-house expertise</p>
+<p>means model development outsourced to consultants:</p>
+<p><em>“We had to fight to retain IP of our models done by consultants, like, how can you have</em></p>
+<p><em>additive agglomerative evidence base if you’re paying for everything on spec every time?</em></p>
+<p><em>It just doesn’t work.”</em></p>
+<p>(TfN 2, 25:07)</p>
 </div>
 </section>
 <section id="de-carbonising-private-vehicle-transit" class="slide level2">
