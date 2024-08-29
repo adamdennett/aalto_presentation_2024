@@ -720,7 +720,7 @@ means model development outsourced to consultants:
 
 -   Maria Wood (PhD Student) looking at equity issues around car dependence and the transition to electric vehicles
 -   New registrations declining and electric vehicles increasing
--   But, car usage still high and how do we transition to a decarbonised system in an equitable way?
+-   But, car usage still high and how do we transition to a decarbonised system in an equitable way? Who might be able to stop using their car?
 
 <iframe title="Registrations of all new cars in the UK" aria-label="Interactive area chart" id="datawrapper-chart-8qZ4u" src="https://datawrapper.dwcdn.net/8qZ4u/24/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="523" data-external="1">
 
