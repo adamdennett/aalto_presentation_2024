@@ -25,7 +25,7 @@ slide-number: true
 -   Professor of Urban Analytics in the [Bartlett Centre for Advanced Spatial Analysis (CASA)](https://www.ucl.ac.uk/bartlett/casa/), University College London
 -   Just stood down after 5-years of being Head of Department for CASA
     -   Arrived as post-doc in 2010
-    -   Grown to 18 full-time academics (3 in 2010!)
+    -   Deparetment has grown to 18 full-time academics (3 in 2010!)
     -   150 Masters Students across 2 MSc Programmes
     -   20-odd PhD students
 -   Lifetime geographer - although didn't ever really have any plans to be, it just sort of happened!
@@ -71,7 +71,7 @@ slide-number: true
 
 -   **Domestic Transport** currently accounts for almost **28%** of total greenhouse gas emissions
 
--   While total Greenhouse Gas emissions have reduced since 1990, housing and transport are now responsible for a greater proportion of this total than ever before (up from 25% to almost 42%) - and still produce around **169 million tons of CO^2^** **per year**
+-   While total Greenhouse Gas emissions down -\> still produce around **169 million tons of CO^2^** **per year**
 :::
 
 ::: {.column width="50%"}
@@ -155,11 +155,15 @@ Source: Eurostat + UK Government
 
 ::: columns
 ::: {.column width="50%"}
--   In 2021, the National Housing Federation reported that a combination of gas central heating and poor insulation meant that as heat easily leaks from many of the UK's homes, it requires even more gas to heat them.
+-   National Housing Federation Report (2021):
+
+    -   gas central heating + poor insulation the norm in UK
 
 -   The average family or household in England is currently producing more CO^2^ every year by just living in their home than they are by driving their car!
 
--   Three in every five (60%) homeowners don't think their home energy use has much of an impact on carbon emissions. More than one in four homeowners (28%) have no plans to make "eco-upgrades" to their homes in the next ten years.
+-   60% of homeowners don't think their home energy use has much of an impact on carbon emissions.
+
+-   28% have no plans to make "eco-upgrades" to their homes in the next ten years.
 :::
 
 ::: {.column width="50%"}
@@ -171,9 +175,14 @@ Source: Eurostat + UK Government
 
 ::: columns
 ::: {.column width="40%"}
--   UK Housing Stock is incredibly diverse in terms of its morphology, but important fact is that most of it is OLD
--   Age is relevant as insulation standards are only a relatively recent innovation and there is a conspicuous absence of a national programme of retrofitting to improve old stock
--   Political ineptitude over recent decades means rates of improvement through insulation and other forms of improvement have been slow
+-   Diverse stock morphology -\> but most of it is OLD
+    -   78% built before 1980 (EU - 61%)
+    -   38% built before 1946 (EU - 18%)
+-   Insulation standards a recent innovation - older stock more poorly insulated
+-   No national programme of retrofitting to improve old stock
+-   Rates of stock improvement are slow
+    -   2012 - 55% of homes in England had good or very good roof insulation
+    -   2022 - 57% of homes in England had good or very good roof insulation
 :::
 
 ::: {.column width="60%"}
@@ -261,13 +270,10 @@ But is this enough and how are they going to achieve it?
 ::: columns
 ::: {.column width="50%"}
 -   Insulate Britain - pressure group - Estimates that 1.5 homes per minute need to be retrofitted up until 2050 to hit our legally-binding net-zero target - something that we are currently far from achieving.
--   Retrofit is expensive
 -   Route retrofit unclear for many people (where should I start, who can do it for me?)
--   Central government needs to develop proper incentives
-    -   Direct funding (grants)
-    -   or tax incentives
--   Schemes such as those available in Ireland (where government recommends suppliers, installers etc.) needed to help people get started
+    -   In other countries such as Ireland government recommends suppliers, installers etc. - no similar scheme in UK
 -   Insulate Britain highlights that UK government currently doesn't have a long-term strategy or funding mechanism in place to upgrade/retrofit homes to meet our climate commitments
+-   Incentives such as direct funding (grants) or tax breaks could help - none in the pipeline
 :::
 
 ::: {.column width="50%"}
@@ -305,9 +311,15 @@ But is this enough and how are they going to achieve it?
 ::: {.column width="50%"}
 -   [The Department for Levelling Up, Housing and Communities (DLUHC)](https://www.gov.uk/housing-local-and-community/energy-efficiency-in-buildings) collects and maintains data on every Energy Performance Certificate issued in England and Wales. The database is available as Open Data for anyone to explore and analyse.
 
--   The latest edition of the EPC dataset (Version 10) contains some 25 million records (some repeat entries) which equate to about 14 million residential properties in the England and Wales - just over 50% of the 26.7 million that exist.
+-   EPC dataset (Version 10)
 
--   More recent entries to the EPC database feature a Unique Property Reference Number (UPRN) which enables us locate precisely where each property is located
+    -   25 million records (some repeat entries - new certificates issued for same property etc.)
+
+    -   14 million residential properties in the England and Wales
+
+    -   \~50% of total 26.7 million residential properties
+
+-   Address information varied, but Unique Property Reference Number (UPRN) links to precise map coordinates for each property
 :::
 
 ::: {.column width="50%"}
@@ -319,7 +331,6 @@ But is this enough and how are they going to achieve it?
 
 ::: columns
 ::: {.column width="50%"}
--   We analysed 14m properties in the EPC dataset
 -   Each home has two scores associated with it:
     -   Energy Efficiency (0-100) - how much energy used - related to running costs
     -   Environmental Impact (0-100) - level of CO2 emissions associated with energy use (clean electricity much better than buring coal, for same energy output)
@@ -343,8 +354,9 @@ Average Energy Efficiency and Environmental Impact by Local Authority - Source, 
 
 ## Location
 
--   Depending on which part of the country you are living in, you are more likely to be living in a particular type and size of property
--   Accounting for the type, size, age and other characteristics of a property relative to energy efficiency is important if we want to show where energy efficiency is better or worse than we would expect
+-   Spatial variation in most common type (left) and size (right) of property
+-   Controlling for the type, size, age and other characteristics of a property relative to energy efficiency is important
+    -   Does London just score better for energy efficiency just because it is full of small flats?
 
 ![](images/Morphology.png){fig-align="left" width="45%"} ![](images/AvgFloorArea.png){fig-align="right" width="45%"}
 
@@ -352,11 +364,11 @@ Average Energy Efficiency and Environmental Impact by Local Authority - Source, 
 
 ::: columns
 ::: {.column width="40%"}
--   **Energy Efficiency is strongly correleated with the age of the property** - older properties are on average less energy efficient, more modern properties are more energy efficient
+-   **Energy Efficiency is strongly correlated with the age of the property**
 -   Band C (69 and above) is the government target for efficient homes.
     -   If your property was built after 2003, you have a very high probability of being band C or higher
     -   As properties get older the variation in their efficiency gets greater, but the probability of being band C or above gets much lower.
-    -   Any property built before World War II has a high probabilty of being below band C
+    -   Any property built before World War II has a high probability of being below band C
 :::
 
 ::: {.column width="60%"}
@@ -368,10 +380,11 @@ Average Energy Efficiency and Environmental Impact by Local Authority - Source, 
 
 ::: columns
 ::: {.column width="50%"}
--   Tenure: Whether the house is owner-occupied, privately rented or socially rented is also very important - **Socially rented housing has far better energy efficiency** than all other housing tenures (only 30% worse than band C)
--   Various reasons for this:
-    -   social landlords more conscious of the needs of residents, some large retrofit programmes
-    -   social housing more likely to be flats
+-   Tenure: Whether the house is owner-occupied, privately rented or socially rented is also very important
+-   **Socially rented housing has far better energy efficiency** than all other housing tenures (only 30% worse than band C)
+    -   Various reasons for this:
+        -   social landlords more conscious of the needs of residents, some large retrofit programmes
+        -   social housing more likely to be flats
 -   Private Rental housing has a bad reputation for quality and unscrupulous landlords and is bad with around 75% worse than band C
 -   But Owner Occupied housing is worse still, with less than 20% band C or above.
 :::
@@ -385,9 +398,15 @@ Average Energy Efficiency and Environmental Impact by Local Authority - Source, 
 
 ::: columns
 ::: {.column width="50%"}
--   The type of property - i.e. whether it is a flat, detached, semi-detached or terraced house is important (the fewer outside walls the better!)
--   **Older detached housing with more external walls and larger floor areas has the worst energy efficiency** - even some modern detached housing has poor energy efficiency (Bottom Right)
--   Terraced flats and maisonettes with fewer external walls and smaller floor areas have the best energy efficiency, with even older properties more likely to be rated C or above than some more modern terraced and semi-detached housing
+-   Property type:
+    -   Flat/Maisonette \~1/2 external walls - smallest average floor area
+    -   Terraced \~2 external walls
+    -   Semi-detached \~3 external walls
+    -   Detached \~4+ external walls - largest average floor area
+-   **Older detached housing has the worst energy efficiency**
+    -   even some modern detached housing has poor energy efficiency (Bottom Right)
+-   Terraced flats and maisonettes have the best energy efficiency
+    -   even older properties more likely to be rated C or above than some more modern terraced and semi-detached housing
 :::
 
 ::: {.column width="50%"}
@@ -405,7 +424,10 @@ Average Energy Efficiency and Environmental Impact by Local Authority - Source, 
     -   tenure
     -   floor area
     -   and which Local Authority the property was found in
--   Age most significant variable in energy performance, closely followed by tenure and dwelling type
+-   Age most significant variable in energy performance
+    -   negative coefficients get larger with age
+-   Tenure (socially rented large positive coefficient) important
+-   Dwelling type (bungalow large negative coefficient) also important
 :::
 
 ::: {.column width="60%"}
@@ -417,10 +439,13 @@ Average Energy Efficiency and Environmental Impact by Local Authority - Source, 
 
 ::: columns
 ::: {.column width="50%"}
--   Local Authority location is important, but different stock mix (more modern flats in cities, older detached properties in rural areas) key
--   Map on the right: Expected avg EPC points better or worse (per property) than Tower Hamlets (best local authority) - after controlling for building characteristics
--   Map on the left: residuals - where actual avg EPC values are lower/worse (\<1 - red) or higher/better (\>1 - orange to blue) than we might expect, given the housing stock mix.
-    -   Central London, in particular, Islington, Hackney and Hammersmith and Fulham performs worse than expected given the benefits afforded by stock-mix, alongside Harlow in Essex, Eastleigh in Hampshire, Norwich, Lincoln and Sunderland
+-   Local Authority location is important
+    -   Different stock mix (more modern flats in cities, older detached properties in rural areas) key
+-   Map on the right:
+    -   Expected avg EPC points (+/-) compared to Tower Hamlets (central London - best local authority) - after controlling for building characteristics
+-   Map on the left: residuals
+    -   Avg EPC values are lower/worse (\<1 - red) or higher/better (\>1 - orange to blue) than expected, given the housing stock mix.
+    -   Central London, in particular, Islington, Hackney and Hammersmith and Fulham performs ***worse*** than expected given the benefits afforded by stock-mix, alongside Harlow in Essex, Eastleigh in Hampshire, Norwich, Lincoln and Sunderland
 :::
 
 ::: {.column width="50%"}
@@ -432,21 +457,41 @@ Average Energy Efficiency and Environmental Impact by Local Authority - Source, 
 
 ::: columns
 ::: {.column width="50%"}
--   **Question:** To what extent can variations in energy efficiency be attributed just to property-level factors? And to what extent do local neighbourhood factors and local government influences (much planning and housing policy is devolved to local authorities in the UK) play a part too?
+-   **Question:** To what extent can variations in energy efficiency be attributed to:
 
--   Multilevel model extends earlier model to account for similarities/differences at various spatial scales & within different groupings (neighbourhood, local authority) of properties, while controlling for property specific variables (e.g., age, floor area, etc.).
+    -   property-level characteristics (size, type, etc.)?
 
--   The variance components model is baseline Multilevel model and has no explanatory variables, but attributes variation in energy consumption / efficiency per m2 to grouping levels in the model
+    -   local neighbourhood factors (relative affluence, types of resident in the area etc.)?
+
+    -   local government influences (much planning and housing policy is devolved to local authorities in the UK)?
+
+-   Multilevel model
+
+    -   extends earlier model to account for similarities/differences at various spatial scales & within different groupings (neighbourhood, local authority) of properties,
+
+    -   while controlling for property specific variables (e.g., age, floor area, etc.).
+
+-   The variance components model
+
+    -   baseline Multilevel model with ***no*** explanatory variables
+
+    -   attributes variation in energy consumption / efficiency per m2 to grouping levels in the model
 :::
 
 ::: {.column width="50%"}
+![](images/ml_model.jpeg)
+:::
+:::
+
+## Capturing Random Variance and Spatial Hetrogeneity
+
 Variance Components model:
 
 $y_{ijk} = \in_{LA}z_{k}+\in_{OA}z_{jk}+\in_{0}z_{ijk}+c$
 
 where:
 
-$y$ = the predicted energy consumption (kWh/m^2^) of a property; $c$ is the *y*-intercept.
+$y$ = the predicted energy consumption (kWh/m2) of a property; $c$ is the y-intercept.
 
 • $i$: a particular property
 
@@ -456,11 +501,9 @@ $y$ = the predicted energy consumption (kWh/m^2^) of a property; $c$ is the 
 
 Results:
 
--   geographical location alone—as defined by a property’s OA and LA—can explain about 15% of the variance in predicted energy consumption per m^2^.
+geographical location alone---as defined by a property's OA and LA---can explain about 15% of the variance in predicted energy consumption per m2.
 
--   vast majority of this variance (85%) is between individual properties at the lowest level. Of the variance accounted for by the higher levels, much more can be attributed to differences between neighbourhoods (OAs) (13%) than to differences between LAs (2%).
-:::
-:::
+vast majority of this variance (85%) is between individual properties at the lowest level. Of the variance accounted for by the higher levels, much more can be attributed to differences between neighbourhoods (OAs) (13%) than to differences between LAs (2%).
 
 ## Capturing Random Variance and Spatial Hetrogeneity
 
@@ -471,7 +514,7 @@ Results:
 -   Property features are significant and these together account for about 23% of the overall variance in the estimated energy consumption per property
 -   once we control for age and type, the energy efficiency of privately rented homes appears to be practically indistinguishable from that of owner-occupied properties
 -   after controlling for property mix, more disadvantaged areas seem to have *more* efficient housing
--   we see little evidence that more affluent groups are preferentially selecting more efficient properties or that they are taking action at higher rates—quite the opposite
+-   we see little evidence that more affluent groups are preferentially selecting more efficient properties or that they are taking action at higher rates---quite the opposite
 :::
 
 ::: {.column width="50%"}
@@ -499,9 +542,9 @@ $m_{1}. x_{jk}$ = a vector of dummy variables relating to types of neighbourhood
 
     -   it appears that more socially advantaged groups are *not* choosing (or able) to use their resources to achieve more sustainable housing
 
-    -   qualitative research from Scotland suggests a general awareness of and support for the “net zero” goal but, on the other, limited awareness of what this might mean for them or any sense that they were responsible for acting in relation to their own homes
+    -   qualitative research from Scotland suggests a general awareness of and support for the "net zero" goal but, on the other, limited awareness of what this might mean for them or any sense that they were responsible for acting in relation to their own homes
 
-    -   Barriers cited by homeowners included costs but also a sense that, without “a clear, personal financial benefit from upgrading,” it was for Government or business to lead the way
+    -   Barriers cited by homeowners included costs but also a sense that, without "a clear, personal financial benefit from upgrading," it was for Government or business to lead the way
 
 -   Once we allow for the fact that private landlords tend to own smaller, older properties, the energy efficiency levels reported appear no lower than those for owner-occupiers
 
@@ -601,9 +644,9 @@ BUT?
 ::: {.column width="50%"}
 Initial findings from Interviews:
 
--   Transport planning as a practice is very far away from transport planning academia: *"You build this tool, based on lots of data and analysis and whatever else, and you use it once to get a Benefit Cost Ratio out of it. … it's all driven by just one thing, and it's how do you feed that into that sausage machine, and at the end, something comes out."* (Amey 1, 74:56)
--   *"Despite all the best intentions today, we might calculate these things and put them in, but you can't escape the fact that most things we do, we're looking at what's the revenue impact, revenue’s the currency that we all work to. There's lots of nice things out there that we would all want to do, but you have to be able to afford them."* (TfL 2, 50:40)
--   The financial environment around transport planning encourages bad practice with respect to collaboration and open source development - lack of investment in in-house expertise means model development outsourced to consultants: *"We had to fight to retain IP of our models done by consultants, like, how can you have additive agglomerative evidence base if you're paying for everything on spec every time? It just doesn't work.”* (TfN 2, 25:07)
+-   Transport planning as a practice is very far away from transport planning academia: *"You build this tool, based on lots of data and analysis and whatever else, and you use it once to get a Benefit Cost Ratio out of it. ... it's all driven by just one thing, and it's how do you feed that into that sausage machine, and at the end, something comes out."* (Amey 1, 74:56)
+-   *"Despite all the best intentions today, we might calculate these things and put them in, but you can't escape the fact that most things we do, we're looking at what's the revenue impact, revenue's the currency that we all work to. There's lots of nice things out there that we would all want to do, but you have to be able to afford them."* (TfL 2, 50:40)
+-   The financial environment around transport planning encourages bad practice with respect to collaboration and open source development - lack of investment in in-house expertise means model development outsourced to consultants: *"We had to fight to retain IP of our models done by consultants, like, how can you have additive agglomerative evidence base if you're paying for everything on spec every time? It just doesn't work."* (TfN 2, 25:07)
 :::
 
 ::: {.column width="50%"}
@@ -743,14 +786,11 @@ Initial findings from Interviews:
 
 ![](images/Distance.png){width="90%"}
 
-
 ## Model Results - Average Duration
-
 
 ![](images/duration.png){width="90%"}
 
 ## Going Forward
-
 
 ::: columns
 ::: {.column width="50%"}
@@ -791,7 +831,6 @@ Initial findings from Interviews:
     evaluation or experimentation that academics are afforded the time to explore.
 
 -   CASA/Arup PhD projects hopefully go some way to bridging this gap - watch this space!
-
 
 ## Overall Observations and Conclusions
 
