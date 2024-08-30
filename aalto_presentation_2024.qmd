@@ -23,12 +23,15 @@ slide-number: true
 ## About Me
 
 -   Professor of Urban Analytics in the [Bartlett Centre for Advanced Spatial Analysis (CASA)](https://www.ucl.ac.uk/bartlett/casa/), University College London
--   Just stood down after 5-years of being Head of Department for CASA
+-   Stood down (1-year ago today!) after 5-years of being Head of Department for CASA
     -   Arrived as post-doc in 2010
-    -   Deparetment has grown to 18 full-time academics (3 in 2010!)
-    -   150 Masters Students across 2 MSc Programmes
-    -   20-odd PhD students
+    -   Lecturer 2013
+    -   Associate Professor 2017
+    -   Professor 2021
 -   Lifetime geographer - although didn't ever really have any plans to be, it just sort of happened!
+-   Research interests in urban modelling, migration and residential mobility, housing, gentrification and beer geographies
+
+-   CASA established in 1995 by Professor Mike Batty - Department has grown to 18 full-time academics (3 in 2010!) - 150 Masters Students across 2 MSc Programmes - 20-odd PhD students
 
 ## What am I going to talk about today?
 
@@ -596,12 +599,36 @@ $m_{1}. x_{jk}$ = a vector of dummy variables relating to types of neighbourhood
 ## CASA / Arup City Modelling Lab
 
 ::: columns
+::: {.column width="50%"}
+-   Arup - large multinational engineering consultancy
+-   Arup City Modelling lab (CML) - group within the company - has been developing large-scale activity-based transport models based around MATSIM software for clients across the world to assist with transport planning and policy making - many recent projects around net-zero transition
+-   Clients including New Zealand Government, Irish Government, City authorities in the UK (Birmingham, Sheffield), Regional Authorities in UK (Transport East)
+-   Arup's CML models and tooling all open source - available via github
+-   BUT applications are developed with, primarily, client-centred outcomes in mind
+-   Joint CASA/Arup initiative developed with an *academic motivation* to see if we can re-purpose these models to delve deeper and more critically into wider sets of equity-related outcomes
+:::
+
+::: {.column width="50%"}
+![](images/Arup_Red_RGB.png)
+![](images/matsim_blue_300dpi.png)
+
+:::
+:::
+
+## CASA / Arup City Modelling Lab
+
+::: columns
 ::: {.column width="80%"}
--   Arup City Modelling lab has, for a decade, been developing large-scale activity-based transport models for clients across the world to assist with transport planning and policy making - many recent projects around net-zero transition
--   Where Arup's models and tooling are developed with, primarily, client-centred outcomes in mind, our *academic motivation* is see if we can re-purpose these models to delve deeper and more critically into wider sets of equity-related outcomes:
+-   Secured funding for 3 PhD studentships starting Sept 2023 - all looking at different aspects of transport equity using activity-based models:
+
+-   Claude Lynch - looking at how transport models are used in practice in the UK and how they might be used to inform policy decisions around net-zero transport in the East of England
     -   what are the modelling/policy/decision making dynamics and interactions between client and consultant that lead to regional transport decisions being made? How are regional transport models being used? How could they be used with respect to social equity?
+    
+-   Maria Wood - looking at equity issues around car dependence and the transition to electric vehicles
     -   what are the equity considerations around the transition from fossil-fuelled to electric private vehicles? Can we develop a better, micro-level activity-based understanding of car dependency? What mitigating or exacerbating effects might new technologies like vehicle-to-grid charging present?
-    -   How can complex, agent-based behaviourally-orientated transport models (such as MATSIMs) can be used to inform decisions around the provision of public transit - particularly buses - in UK transport systems? How might artificial intelligence methods be applied in developing generative solutions to various aspects of bus provision in different urban and regional settings?
+    
+-   Tom Murat - looking at how complex, agent-based behaviourally-orientated transport models can be used to inform decisions around the provision of public transit - particularly buses - in UK transport systems
+    -   How might artificial intelligence methods be applied in developing generative solutions to various aspects of bus provision in different urban and regional settings?
 :::
 
 ::: {.column width="20%"}
@@ -675,9 +702,9 @@ Transport planning as a practice is very far away from transport planning academ
 
 *"You build this tool, based on lots of data and analysis and whatever else, and you*
 
-*use it once to get a Benefit Cost Ratio out of it. ... it's all driven by just one *
+*use it once to get a Benefit Cost Ratio out of it. ... it's all driven by just one*
 
-*thing, and it's how do you feed that into that sausage machine, and at the end, *
+*thing, and it's how do you feed that into that sausage machine, and at the end,*
 
 *something comes out."*
 
@@ -687,13 +714,13 @@ Transport planning as a practice is very far away from transport planning academ
 ## Transport East Project - decarbonising regional transport
 
 ::: r-fit-text
-*"Despite all the best intentions today, we might calculate these things and put them *
+*"Despite all the best intentions today, we might calculate these things and put them*
 
-*in, but you can't escape the fact that most things we do, we're looking at what's the* 
+*in, but you can't escape the fact that most things we do, we're looking at what's the*
 
-*revenue impact, revenue's the currency that we all work to. There's lots of nice things* 
+*revenue impact, revenue's the currency that we all work to. There's lots of nice things*
 
-*out there that we would all want to do, but you have to be able to afford them." *
+*out there that we would all want to do, but you have to be able to afford them."*
 
 (TfL 2, 50:40)
 :::
@@ -701,17 +728,17 @@ Transport planning as a practice is very far away from transport planning academ
 ## Transport East Project - decarbonising regional transport
 
 ::: r-fit-text
-The financial environment around transport planning encourages bad practice with respect 
+The financial environment around transport planning encourages bad practice with respect
 
-to collaboration and open source development - lack of investment in in-house expertise 
+to collaboration and open source development - lack of investment in in-house expertise
 
-means model development outsourced to consultants: 
+means model development outsourced to consultants:
 
-*"We had to fight to retain IP of our models done by consultants, like, how can you have* 
+*"We had to fight to retain IP of our models done by consultants, like, how can you have*
 
 *additive agglomerative evidence base if you're paying for everything on spec every time?*
 
-*It just doesn't work."* 
+*It just doesn't work."*
 
 (TfN 2, 25:07)
 :::
@@ -720,7 +747,8 @@ means model development outsourced to consultants:
 
 -   Maria Wood (PhD Student) looking at equity issues around car dependence and the transition to electric vehicles
 -   New registrations declining and electric vehicles increasing
--   But, car usage still high and how do we transition to a decarbonised system in an equitable way? Who might be able to stop using their car?
+-   But, car usage still high and how do we transition to a decarbonised system in an equitable way? 
+-   ***Who might be able to stop using their car?***
 
 <iframe title="Registrations of all new cars in the UK" aria-label="Interactive area chart" id="datawrapper-chart-8qZ4u" src="https://datawrapper.dwcdn.net/8qZ4u/24/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="523" data-external="1">
 
@@ -880,17 +908,11 @@ means model development outsourced to consultants:
 
 ## Transport, Net-Zero & Equity Conclusions
 
--   Still in the early stages of our exploration in all of these topics, but all three PhD\
-    projects represent slightly different but complementary perspectives on the same broad\
-    challenge - decarbonising our transport system while keeping social considerations front-and-centre.
+-   Still in the early stages of our exploration in all of these topics, but all three PhD projects represent slightly different but complementary perspectives on the same broad challenge - decarbonising our transport system while keeping social considerations front-and-centre.
 
--   Always tempting to view any new innovation (regional ABMs for transport planning,\
-    transition to electric cars, generative AI for scheduling and routing) as potential silver\
-    bullets to challenging problems, but fully evaluating pros and cons needs time and space.
+-   Always tempting to view any new innovation (regional ABMs for transport planning, transition to electric cars, generative AI for scheduling and routing) as potential silver bullets to challenging problems, but fully evaluating pros and cons needs time and space.
 
--   Consultancy world often ahead of academic world in developing quick/plausible solutions\
-    to challenges posed by clients. But narrow delivery focus rarely allows for deeper\
-    evaluation or experimentation that academics are afforded the time to explore.
+-   Consultancy world often ahead of academic world in developing quick/plausible solutions to challenges posed by clients. But narrow delivery focus rarely allows for deeper evaluation or experimentation that academics are afforded the time to explore.
 
 -   CASA/Arup PhD projects hopefully go some way to bridging this gap - watch this space!
 
